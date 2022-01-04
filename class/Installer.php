@@ -35,8 +35,30 @@ class Installer
 
     function installDB()
     {
-        
+
+        echo "Database install...\n";
+        if (!is_readable($file = dirname(__DIR__) . "/puxt.config.php")) {
+            die($file . " not readable");
+        }
+
+        $config = require($file);
+
+        $dbhostname = $config["database"]["hostname"];
+        $dbuser = $config["database"]["username"];
+        $dbpassword = $config["database"]["password"];
+        $dbname = $config["database"]["database"];
+        $dbport = $config["database"]["port"] ?? "3306";
+
+        if (!$dbuser || !$dbpassword || !$dbname) {
+            die("db config config error");
+        }
+
+        $cmd = "mysql -h {$dbhostname} -u {$dbuser} -P {$dbport} -p{$dbpassword} {$dbname} < " . __DIR__ . "/vx.sql";
+
+        `$cmd`;
+        echo "Done\n";
     }
+
 
 
     function input(string $prompt = null): string
