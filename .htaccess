@@ -1,9 +1,9 @@
 RewriteEngine on
 
-RewriteCond %{REQUEST_URI} ^/hl-vx/$
+RewriteCond %{REQUEST_URI} ^/vx/$
 RewriteRule (.*) vendor/mathsgod/puxt-vx/www/index.html [END]
 
-RewriteCond %{REQUEST_URI} ^/hl-vx/api/
+RewriteCond %{REQUEST_URI} ^/vx/api/
 RewriteRule (.*) index.php [END]
 
 RewriteRule ^$ vendor/mathsgod/puxt-vx/www [L]
