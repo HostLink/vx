@@ -53,7 +53,7 @@ class Installer
             die("db config config error");
         }
 
-        $cmd = "mysql -h {$dbhostname} -u {$dbuser} -P {$dbport} -p{$dbpassword} {$dbname} < " . __DIR__ . "/vx.sql";
+        $cmd = "mysql -h {$dbhostname} -u {$dbuser} -P {$dbport} -p{$dbpassword} {$dbname} < " . dirname(__DIR__) . "/vx.sql";
 
         `$cmd`;
         echo "Done\n";
