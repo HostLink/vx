@@ -15,5 +15,11 @@
         "psr-4": {
             "": "class/"
         }
+    },
+    "scripts": {
+        "post-create-project-cmd": "Installer::postPackageInstall"
+    },
+    "require-dev": {
+        "composer/composer": "^2.2"
     }
 }
