@@ -1,0 +1,19 @@
+{
+    "name": "hostlink/vx",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Raymond Chong",
+            "email": "mathsgod@yahoo.com"
+        }
+    ],
+    "require": {
+        "mathsgod/puxt": "^2.0",
+        "mathsgod/puxt-vx": "dev-main"
+    },
+    "autoload": {
+        "psr-4": {
+            "": "class/"
+        }
+    }
+}
