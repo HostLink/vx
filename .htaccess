@@ -1,5 +1,7 @@
 RewriteEngine on
 
+RewriteRule .* - [env=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
 RewriteCond %{REQUEST_URI} ^/vx/$
 RewriteRule (.*) vendor/mathsgod/puxt-vx/www/index.html [END]
 
